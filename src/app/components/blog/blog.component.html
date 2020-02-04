@@ -1,0 +1,19 @@
+<h1>Eventos<small>Todos</small></h1>
+<hr>
+
+<div class="card-columns">
+    <div class="card animated fadeIn fast" *ngFor="let blog of blogObj; let i = index" style="height: 400px; width: 70%;">
+        <img src="{{ blog.imagenMiniatura }}" class="card-img-top" alt="{{ blog.nombreEvento }}" style="height: 30%; width: 50%;">
+        <div class="card-body">
+            <h5 class="card-title">{{ blog.nombreEvento }}</h5>
+            <p class="card-text">{{ blog. descripcionEvento}}</p>
+            <p class="card-text"><small class="text-muted">{{ blog.fechaEvento}}</small></p>
+
+            <button (click)="verEvento(i)" type="button" name="button" class="btn btn-outline-primary btn-block">
+              ver mas...
+            </button>
+            <!--<a [routerLink]="['/evento',i]" class="btn btn-outline-primary">Ver Mas link.</a> -->
+
+        </div>
+    </div>
+</div>
