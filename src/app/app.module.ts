@@ -1,43 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-//servicios
-import { AlejandroService } from './services/alejandro.services';
-import { blogService} from './services/blog.services';
-import { ContactoService } from './services/contact.services';
+
 
 
 //rutas
 import { APP_ROUTING } from './app.routes';
-
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
-import { AlejandroComponent } from './components/alejandro/alejandro.component';
-import { ServiciosComponent } from './components/servicios/servicios.component';
-import { BlogComponent } from './components/blog/blog.component';
-import { PortafolioComponent } from './components/portafolio/portafolio.component';
-import { ContactoComponent } from './components/contacto/contacto.component';
-import { InicioComponent } from './components/inicio/inicio.component';
-import { EventoComponent } from './components/evento/evento.component';
-import { UserComponent } from './components/user/user.component';
-
-
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ProductsComponent } from './components/products/products.component';
+import { SaleBuyComponent } from './components/sale-buy/sale-buy.component';
+import { SaleProductsComponent } from './components/sale-products/sale-products.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    AlejandroComponent,
-    ServiciosComponent,
-    BlogComponent,
-    PortafolioComponent,
-    ContactoComponent,
-    InicioComponent,
-    EventoComponent,
-    UserComponent
+    ProductsComponent,
+    SaleBuyComponent,
+    SaleProductsComponent
   ],
   imports: [
     BrowserModule,
@@ -46,9 +30,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   providers: [
-    AlejandroService,
-    blogService,
-    ContactoService
+  
   ],
   bootstrap: [AppComponent]
 })

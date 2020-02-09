@@ -1,0 +1,35 @@
+<table style="width:100%">
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </tr>
+    <tr *ngFor="let product of products;let i = index">
+        <td>{{products[i].name}}</td>
+        <td>{{products[i].price}}</td>
+        <td>{{products[i].quantity}}</td>
+
+    </tr>
+</table>
+<button (click)=" mostrar =!mostrar " class="btn btn-outline-primary btn-block">
+   Agregar usuario
+</button>
+<div *ngIf="mostrar" style="width: 100%;">
+    <h2>Registro de usuario</h2>
+
+    <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+        <label for="name">name</label>
+        <input type="text" name="name" #name="ngModel" [(ngModel)]="product.name" required pattern="[a-zA-Z]+" />
+        <span *ngIf="name.touched && !name.valid">El nombre no es valido</span>
+        <br/>
+        <label for="price">price</label>
+        <input type="number" name="price" #price="ngModel" [(ngModel)]="product.price" required />
+        <span *ngIf="price.touched && !price.valid">El apellido no es valido</span>
+        <br/>
+        <label for="quantity">quantity</label>
+        <input type="number" name="identificacion" #quantity="ngModel" [(ngModel)]="product.quantity" required />
+        <span *ngIf="quantity.touched && !quantity.valid">la identificacion no es valido</span>
+        <br/>
+        <input type="submit" value="Enviar" [disabled]="!productForm.form.valid" />
+    </form>
+</div>

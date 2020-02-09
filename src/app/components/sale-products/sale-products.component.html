@@ -1,0 +1,21 @@
+<h1>Select the product you want to buy</h1>
+<select [(ngModel)]="idProduct" (change)="create()">
+    <option value="0">Select...</option>
+    <option *ngFor="let product of products;let i = index" value="{{products[i].id}}">{{products[i].name}}</option>
+</select>
+<table *ngIf="prueba" style="width:100%">
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+    </tr>
+    <tr>
+        <td>{{productBuy.name}}</td>
+        <td>{{productBuy.price}}</td>
+        <td>
+            <form #buyForm="ngForm" (ngSubmit)="sale(buyForm,productBuy)">
+                <input type="number" name="quan" [(ngModel)]="quanti.quantity" />
+                <input type="submit" value="Buy" [disabled]="!buyForm.form.valid" />
+            </form>
+        </td>
+    </tr>
+</table>
